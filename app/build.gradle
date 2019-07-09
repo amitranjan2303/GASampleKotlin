@@ -36,7 +36,7 @@ dependencies {
     //google firebase services
     implementation "com.google.firebase:firebase-core:$firebase_core_version"
     //analytics
-    implementation "com.google.android.gms:play-services-analytics:$google_analytics_version"
+//    implementation "com.google.android.gms:play-services-analytics:$google_analytics_version"
 }
 
 apply plugin: 'com.google.gms.google-services'
