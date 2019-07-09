@@ -9,6 +9,7 @@ import com.google.android.gms.analytics.Tracker
 /*
 * This is GATracker class sends events to google analytics
 * */
+@Deprecated("This tracking pattern is deprecated because firebase automatically handle and send events on firebase dashboard as well as google analytics dashboard also")
 object GoogleAnalyticsTracker : AppEventTracker {
 
     private var mAnalytics: GoogleAnalytics? = null

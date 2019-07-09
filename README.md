@@ -27,7 +27,9 @@
      dependencies {
          // Add this line
          implementation 'com.google.firebase:firebase-core:17.0.0' // please check google docs for latest version
-         implementation 'com.google.android.gms:play-services-analytics:17.0.0'  // please check google docs for latest version
+          // please check google docs we don't need to add below dependency because firbase handle both dashboard
+       //  implementation 'com.google.android.gms:play-services-analytics:17.0.0' 
+         
       }
       ```
 
@@ -46,24 +48,26 @@
 
 7. Add `ACCESS_NETWORK_STATE` and `Internet permission` in your manifest
 
+  #* Note step 8 and 9 is deprecated we don't need to add this
+  ```
 8. Create create xml folder in res folder and create here `google_tracker.xml` file and paste below content in this file
-```
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
+   
+  <?xml version="1.0" encoding="utf-8"?>
+    <resources>
     <string name="ga_trackingId" translatable="false">${YOUR_TRACKING_ID}</string>
-</resources>
-```
-10. Tracking id used from google analytics dashboard which is generated during the registration of GA
+   </resources>
 
+10. Tracking id used from google analytics dashboard which is generated during the registration of GA
+```
 11. Create you application class by extending Application class
 
 12. Create package with name `tracking`
 
 13. Create `AppEventTracker`' Interface in tracking package
 
-14. Create `GoogleAnalyticsTracker` singleton class in tracking package here make setup for Google analytics tracker
+14. Create `FireBaseAnalyticsTracker` singleton class in tracking package here make setup for Google analytics tracker
 
-15  Initialise your GA Tracker in your Application class with the help of `AppEventTrackerHelper`
+15  Initialise your FA Tracker in your Application class with the help of `AppEventTrackerHelper`
 
 16. `AppEventTrackerHelper` class sends events to all tracker which configutred at the time of initialization
 
