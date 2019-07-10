@@ -4,7 +4,9 @@ import android.app.Application
 import com.example.gasamplewithnavigation.tracking.AppEventTrackerHelper
 import com.example.gasamplewithnavigation.tracking.FireBaseAnalyticsTracker
 import com.example.gasamplewithnavigation.tracking.GoogleAnalyticsTracker
-
+/**
+ * @author Amit Ranjan
+ * **/
 class GASampleWithNavigationApp : Application() {
     override fun onCreate() {
         super.onCreate()

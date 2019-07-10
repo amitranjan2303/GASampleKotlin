@@ -8,6 +8,7 @@ import com.google.android.gms.analytics.Tracker
 
 /*
 * This is GATracker class sends events to google analytics
+* @author Amit Ranjan
 * */
 @Deprecated("This tracking pattern is deprecated because firebase automatically handle and send events on firebase dashboard as well as google analytics dashboard also")
 object GoogleAnalyticsTracker : AppEventTracker {
@@ -15,6 +16,9 @@ object GoogleAnalyticsTracker : AppEventTracker {
     private var mAnalytics: GoogleAnalytics? = null
     private var mTracker: Tracker? = null
 
+    /** Need application context to initialize google analytics service
+     * @param context Application context
+     **/
     fun initializeGATracker(context: Context?): GoogleAnalyticsTracker {
         mAnalytics = GoogleAnalytics.getInstance(context)
         return this
@@ -29,9 +33,10 @@ object GoogleAnalyticsTracker : AppEventTracker {
         return mTracker;
     }
 
-    /*
-    * this implemented event recieve events from out side of class in app and sent to google analytics
-    * */
+    /**
+    * this method recieve events from out side of class in app and sent to google analytics
+    * @param eventName The Application event activity name
+    **/
     override fun track(eventName: String?) {
         getTracker()?.send(
             HitBuilders.EventBuilder()
@@ -42,16 +47,18 @@ object GoogleAnalyticsTracker : AppEventTracker {
         )
     }
 
-    /*
+    /**
     * this implemented event recieve event name from out side of class in app and sent to google analytics
-    * */
+    * @param eventName The Application event activity name
+    * @param eventActions The Application activity events actions hashmap
+    **/
     override fun track(eventName: String?, eventActions: HashMap<String, Any>) {
 
         // Bundle params=new Bundle();
         val gaEventActions = HashMap<String, String>()
 
-        for (entry in eventActions.entries){
-            eventActions.put(entry.key,entry.value.toString());
+        for (entry in eventActions.entries) {
+            eventActions.put(entry.key, entry.value.toString());
         }
         getTracker()?.send(
             HitBuilders.EventBuilder()

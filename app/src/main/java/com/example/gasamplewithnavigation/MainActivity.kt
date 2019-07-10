@@ -13,7 +13,9 @@ import androidx.appcompat.widget.Toolbar
 import android.view.Menu
 import com.example.gasamplewithnavigation.tracking.AppEventTrackerHelper
 import com.example.gasamplewithnavigation.tracking.Events
-
+/**
+ * @author Amit Ranjan
+ * **/
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
     private val TAG = "MainActivity"
@@ -69,6 +71,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         //Track Evevnts Here
         val action = HashMap<String, Any>()
+        //inplace of tag vwe can send user id
         action.put(TAG, item.title.toString())
         AppEventTrackerHelper.track(Events.Navigation.name, action)
 
