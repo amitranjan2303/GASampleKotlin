@@ -76,5 +76,12 @@
 
 <----------------------------------Enjoy your code--------------------------------->
 
-for more please email at amitranjan2303@gmail.com
+## Author
 
+Heril Muratović  
+Software Engineer  
+<br>
+**Mobile**: +91 9643 595 785  
+**E-mail**: amitranjan2303@gmail.com  
+**Skype**: amitranjan2330  
+**LinkedIn**: https://www.linkedin.com/in/amitranjan5/
