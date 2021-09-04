@@ -78,7 +78,7 @@
 
 ## Author
 
-Heril Muratović  
+Amit Ranjan  
 Software Engineer  
 <br>
 **Mobile**: +91 9643 595 785  
